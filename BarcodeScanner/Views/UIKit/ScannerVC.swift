@@ -11,9 +11,7 @@ import AVFoundation
 enum CameraError: String {
     case invalidDeviceInput  = "Something wrong with camera"
     case invalidScannedValue = "Something wrong with barcode"
-    
 }
-
 
 protocol ScannerVCDelegate: AnyObject {
     func didFind(barcode: String)
@@ -21,8 +19,6 @@ protocol ScannerVCDelegate: AnyObject {
 }
 
 final class ScannerVC: UIViewController {
-    
-   
     
     let captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer?
@@ -47,7 +43,6 @@ final class ScannerVC: UIViewController {
             scannerDelegate?.didSurface(error: .invalidDeviceInput)
             return
         }
-        
         previewLayer.frame = view.layer.bounds
     }
     
@@ -56,7 +51,6 @@ final class ScannerVC: UIViewController {
             scannerDelegate?.didSurface(error: .invalidDeviceInput)
             return
         }
-        
         
         let videoInput: AVCaptureDeviceInput
         
@@ -108,7 +102,6 @@ extension ScannerVC: AVCaptureMetadataOutputObjectsDelegate{
             scannerDelegate?.didSurface(error: .invalidScannedValue)
             return
         }
-        
         scannerDelegate?.didFind(barcode: barcode)
     }
 }

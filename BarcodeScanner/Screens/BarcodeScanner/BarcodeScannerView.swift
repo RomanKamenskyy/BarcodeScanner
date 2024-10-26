@@ -35,7 +35,6 @@ struct BarcodeScannerView: View {
                       message: Text(alertItem.message),
                       dismissButton: alertItem.dismissButton)
             }
-            
         }
     }
 }

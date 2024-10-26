@@ -22,7 +22,6 @@ struct ScannerView: UIViewControllerRepresentable {
         Coordinator(scannedView: self)
     }
     
-    
     final class Coordinator: NSObject,ScannerVCDelegate {
         
         private let scannedView: ScannerView
@@ -43,11 +42,5 @@ struct ScannerView: UIViewControllerRepresentable {
                 scannedView.alertItem = AlertContext.invalidBarcodeInput
             }
         }
-        
-        
     }
-    
-
-    
-   
 }
